@@ -1,18 +1,16 @@
-package familyManager;
+package familyManager.api.dto;
 
-import java.time.LocalDate;
-
-public class Father {
+public class Child {
     private final String pesel;
     private final String firstName;
     private final String secondName;
-    private final LocalDate birthDate;
+    private final String sex;
 
-    public Father(String pesel, String firstName, String secondName, LocalDate birthDate) {
+    public Child(String pesel, String firstName, String secondName, String sex) {
         this.pesel = pesel;
         this.firstName = firstName;
         this.secondName = secondName;
-        this.birthDate = birthDate;
+        this.sex = sex;
     }
 
     public String getPesel() {
@@ -27,7 +25,7 @@ public class Father {
         return secondName;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public String getSex() {
+        return sex;
     }
 }

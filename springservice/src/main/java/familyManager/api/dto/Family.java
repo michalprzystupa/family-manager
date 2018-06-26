@@ -1,4 +1,4 @@
-package familyManager;
+package familyManager.api.dto;
 
 import java.util.List;
 

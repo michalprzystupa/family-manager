@@ -1,5 +1,8 @@
 package familyManager;
 
+import familyManager.api.dto.Child;
+import familyManager.api.dto.Family;
+import familyManager.api.dto.Father;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

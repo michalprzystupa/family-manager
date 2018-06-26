@@ -1,5 +1,6 @@
 package familyManager;
 
+import familyManager.api.dto.Child;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
@@ -10,17 +11,15 @@ import java.util.Map;
 
 @org.springframework.stereotype.Repository
 class Repository {
-    private final String SEARCH_FAMILY = "SELECT DISTINCT familyId FROM Child WHERE pesel LIKE ?";
     private final JdbcTemplate jdbcTemplate;
 
-
     @Autowired
-    public Repository(JdbcTemplate jdbcTemplate) {
+    Repository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     List<Long> searchFamilyByChild(String firstName, String secondName, String pesel, String sex) {
-        return jdbcTemplate.queryForList(SEARCH_FAMILY, new Object[]{"%" + pesel + "%"}, Long.class);
+        return jdbcTemplate.queryForList(Query.SELECT_DISTINCT_FAMILY_ID_BY_PESEL, new Object[]{"%" + pesel + "%"}, Long.class);
     }
 
     void addChildToFamily(long familyId, Child child) {

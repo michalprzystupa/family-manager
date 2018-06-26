@@ -4,5 +4,9 @@
 *.iml
 
 ### Java ###
+*.class
 
-### maven ###
+### Package Files ###
+*.jar
+database/target/*
+springservice/target/*

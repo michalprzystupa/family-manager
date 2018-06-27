@@ -62,10 +62,10 @@ public class FamilyControllerTest {
         List<Child> children3 = Arrays.asList(allChildren[3], allChildren[4], allChildren[5]);
         List<Child> children4 = Collections.emptyList();
 
-        Father father1  = allFathers[0];
-        Father father2  = allFathers[1];
-        Father father3  = allFathers[2];
-        Father father4  = allFathers[3];
+        Father father1 = allFathers[0];
+        Father father2 = allFathers[1];
+        Father father3 = allFathers[2];
+        Father father4 = allFathers[3];
 
         Family family1 = new Family(father1, children1);
         Family family2 = new Family(father2, children2);
@@ -81,11 +81,20 @@ public class FamilyControllerTest {
         String searchByFirstName = searchFamilyAsJson("gor", "", "", "");
         String searchBySecondName = searchFamilyAsJson("", "Ronaldo", "", "");
         String searchByPesel = searchFamilyAsJson("", "", "1", "");
+        String searchWithEmptyParams = searchFamilyAsJson("", "", "", "");
+        String searchWithoutParameters = mockMvc.perform(get(FAMILIES_URL))
+                .andExpect(status().isOk())
+                .andDo(print())
+                .andReturn()
+                .getResponse()
+                .getContentAsString();
 
         assertEquals(jsonConverter.toJson(Arrays.asList(family2, family3)), searchFemale);
         assertEquals(jsonConverter.toJson(Collections.singletonList(family1)), searchByFirstName);
         assertEquals(jsonConverter.toJson(Collections.emptyList()), searchBySecondName);
         assertEquals(jsonConverter.toJson(Arrays.asList(family1, family2, family3)), searchByPesel);
+        assertEquals(jsonConverter.toJson(Arrays.asList(family1, family2, family3)), searchWithEmptyParams);
+        assertEquals(jsonConverter.toJson(Arrays.asList(family1, family2, family3)), searchWithoutParameters);
     }
 
     @Test

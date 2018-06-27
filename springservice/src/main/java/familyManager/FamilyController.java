@@ -38,10 +38,10 @@ class FamilyController {
     }
 
     @GetMapping
-    List<Family> searchByChild(@RequestParam String firstName,
-                               @RequestParam String secondName,
-                               @RequestParam String pesel,
-                               @RequestParam String sex) {
+    List<Family> searchByChild(@RequestParam(defaultValue = "", required = false) String firstName,
+                               @RequestParam(defaultValue = "", required = false) String secondName,
+                               @RequestParam(defaultValue = "", required = false) String pesel,
+                               @RequestParam(defaultValue = "", required = false) String sex) {
         return searchChildService.searchFamiliesByChildparameters(firstName, secondName, pesel, sex);
     }
 

@@ -1,21 +1,22 @@
 package familyManager;
 
-import familyManager.api.dto.Child;
-import familyManager.api.dto.Father;
+import familyManager.api.Child;
+import familyManager.api.Father;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Statement;
 import java.util.List;
 
-@org.springframework.stereotype.Repository
-class Repository {
+@Repository
+class FamilyRepository {
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    Repository(JdbcTemplate jdbcTemplate) {
+    FamilyRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -47,14 +48,15 @@ class Repository {
     List<Child> readChild(long familyId) {
         return jdbcTemplate.query(Query.SELECT_CHILD_BY_FAMILY_ID, new Object[]{familyId},
                 (resultSet, i) -> new Child(
-                resultSet.getString("pesel"),
-                resultSet.getString("firstName"),
-                resultSet.getString("secondName"),
-                resultSet.getString("sex")));
-
+                        resultSet.getString("pesel"),
+                        resultSet.getString("firstName"),
+                        resultSet.getString("secondName"),
+                        resultSet.getString("sex")));
     }
 
-    List<Long> searchFamilyByChild(String firstName, String secondName, String pesel, String sex) {
-        return jdbcTemplate.queryForList(Query.SELECT_DISTINCT_FAMILY_ID_BY_PESEL, new Object[]{"%" + pesel + "%"}, Long.class);
+    List<Long> searchFamilyIdsByChildParameters(String firstName, String secondName, String pesel, String sex) {
+        return jdbcTemplate.queryForList(Query.SELECT_DISTINCT_FAMILY_ID_BY_CHILD_PARAMETERS,
+                new Object[]{"%" + firstName + "%", "%" + secondName + "%", "%" + pesel + "%", "%" + sex + "%"},
+                Long.class);
     }
 }

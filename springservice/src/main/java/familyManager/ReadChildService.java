@@ -1,6 +1,6 @@
 package familyManager;
 
-import familyManager.api.dto.Child;
+import familyManager.api.Child;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,10 +8,10 @@ import java.util.List;
 
 @Service
 class ReadChildService {
-    private final Repository repository;
+    private final FamilyRepository repository;
 
     @Autowired
-    ReadChildService(Repository repository) {
+    ReadChildService(FamilyRepository repository) {
         this.repository = repository;
     }
 

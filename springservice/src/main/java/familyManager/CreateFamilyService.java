@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 class CreateFamilyService {
-    private final Repository repository;
+    private final FamilyRepository repository;
 
     @Autowired
-    CreateFamilyService(Repository repository) {
+    CreateFamilyService(FamilyRepository repository) {
         this.repository = repository;
     }
 

@@ -1,0 +1,26 @@
+[
+  {
+    "pesel": "1",
+    "firstName": "Stanislaw",
+    "secondName": "Czerczesow",
+    "birthDate": "1970-10-12"
+  },
+  {
+    "pesel": "2",
+    "firstName": "Carlos",
+    "secondName": "Quiroz",
+    "birthDate": "1970-10-12"
+  },
+  {
+    "pesel": "3",
+    "firstName": "Zlatko",
+    "secondName": "Dalic",
+    "birthDate": "1970-10-12"
+  },
+  {
+    "pesel": "4",
+    "firstName": "Fernando",
+    "secondName": "Santos",
+    "birthDate": "1970-10-12"
+  }
+]

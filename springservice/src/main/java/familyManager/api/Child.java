@@ -1,4 +1,4 @@
-package familyManager.api.dto;
+package familyManager.api;
 
 public class Child {
     private String pesel;

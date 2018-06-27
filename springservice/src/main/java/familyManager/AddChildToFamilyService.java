@@ -1,15 +1,15 @@
 package familyManager;
 
-import familyManager.api.dto.Child;
+import familyManager.api.Child;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 class AddChildToFamilyService {
-    private final Repository repository;
+    private final FamilyRepository repository;
 
     @Autowired
-    AddChildToFamilyService(Repository repository) {
+    AddChildToFamilyService(FamilyRepository repository) {
         this.repository = repository;
     }
 

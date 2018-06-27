@@ -1,8 +1,8 @@
 package familyManager;
 
-import familyManager.api.dto.Child;
-import familyManager.api.dto.Family;
-import familyManager.api.dto.Father;
+import familyManager.api.Child;
+import familyManager.api.Family;
+import familyManager.api.Father;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,12 +16,18 @@ class FamilyController {
     private final AddFatherToFamilyService addFatherToFamilyService;
     private final AddChildToFamilyService addChildToFamilyService;
     private final ReadFamilyService readFamilyService;
-    private final SearchChildService searchChildService;
+    private final SearchByChildService searchChildService;
     private final ReadChildService readChildService;
     private final ReadFatherService readFatherService;
 
     @Autowired
-    FamilyController(CreateFamilyService createFamilyService, AddFatherToFamilyService addFatherToFamilyService, AddChildToFamilyService addChildToFamilyService, ReadFamilyService readFamilyService, SearchChildService searchChildService, ReadChildService readChildService, ReadFatherService readFatherService) {
+    FamilyController(CreateFamilyService createFamilyService,
+                     AddFatherToFamilyService addFatherToFamilyService,
+                     AddChildToFamilyService addChildToFamilyService,
+                     ReadFamilyService readFamilyService,
+                     SearchByChildService searchChildService,
+                     ReadChildService readChildService,
+                     ReadFatherService readFatherService) {
         this.createFamilyService = createFamilyService;
         this.addFatherToFamilyService = addFatherToFamilyService;
         this.addChildToFamilyService = addChildToFamilyService;
@@ -29,6 +35,14 @@ class FamilyController {
         this.searchChildService = searchChildService;
         this.readChildService = readChildService;
         this.readFatherService = readFatherService;
+    }
+
+    @GetMapping
+    List<Family> searchByChild(@RequestParam String firstName,
+                               @RequestParam String secondName,
+                               @RequestParam String pesel,
+                               @RequestParam String sex) {
+        return searchChildService.searchFamiliesByChildparameters(firstName, secondName, pesel, sex);
     }
 
     @ResponseStatus(HttpStatus.CREATED)

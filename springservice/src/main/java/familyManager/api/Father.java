@@ -1,4 +1,4 @@
-package familyManager.api.dto;
+package familyManager.api;
 
 import java.time.LocalDate;
 

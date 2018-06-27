@@ -1,0 +1,14 @@
+[
+  {
+    "pesel": "00000000001",
+    "firstName": "Adam",
+    "secondName": "Kowalski",
+    "sex": "male"
+  },
+  {
+    "pesel": "00000000002",
+    "firstName": "Artur",
+    "secondName": "Kowalski",
+    "sex": "male"
+  }
+]

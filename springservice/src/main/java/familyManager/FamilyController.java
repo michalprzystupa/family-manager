@@ -4,6 +4,7 @@ import familyManager.api.dto.Child;
 import familyManager.api.dto.Family;
 import familyManager.api.dto.Father;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,16 +31,19 @@ class FamilyController {
         this.readFatherService = readFatherService;
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     long createFamily() {
         return createFamilyService.createFamily();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{familyId}/father")
     void addFatherToFamily(@PathVariable int familyId, @RequestBody Father father) {
         addFatherToFamilyService.addFatherToFamily(familyId, father);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{familyId}/children")
     void addChildToFamily(@PathVariable int familyId, @RequestBody Child child) {
         addChildToFamilyService.addChildToFamily(familyId, child);
@@ -54,6 +58,7 @@ class FamilyController {
     List<Child> readChild(@PathVariable int familyId) {
         return readChildService.readChildren(familyId);
     }
+
     @GetMapping("/{familyId}/father")
     Father readFather(@PathVariable int familyId) {
         return readFatherService.readFather(familyId);

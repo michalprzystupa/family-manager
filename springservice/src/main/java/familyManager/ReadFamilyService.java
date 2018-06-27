@@ -12,15 +12,12 @@ import java.util.List;
 class ReadFamilyService {
     private final ReadFatherService readFatherService;
     private final ReadChildService readChildService;
-    private final SearchChildService searchChildService;
 
     @Autowired
-    public ReadFamilyService(ReadFatherService readFatherService, ReadChildService readChildService, SearchChildService searchChildService) {
+    public ReadFamilyService(ReadFatherService readFatherService, ReadChildService readChildService) {
         this.readFatherService = readFatherService;
         this.readChildService = readChildService;
-        this.searchChildService = searchChildService;
     }
-
 
     Family readFamily(long familyId) {
         Father father = readFatherService.readFather(familyId);

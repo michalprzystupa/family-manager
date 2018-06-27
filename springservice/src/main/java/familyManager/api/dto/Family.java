@@ -7,7 +7,6 @@ public class Family {
     private final List<Child> children;
 
     public Family(Father father, List<Child> children) {
-
         this.father = father;
         this.children = children;
     }

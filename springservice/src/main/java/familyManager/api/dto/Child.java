@@ -31,20 +31,4 @@ public class Child {
     public String getSex() {
         return sex;
     }
-
-    public void setPesel(String pesel) {
-        this.pesel = pesel;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
 }

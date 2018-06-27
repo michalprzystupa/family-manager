@@ -33,20 +33,4 @@ public class Father {
     public LocalDate getBirthDate() {
         return birthDate;
     }
-
-    public void setPesel(String pesel) {
-        this.pesel = pesel;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
 }

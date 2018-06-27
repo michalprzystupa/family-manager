@@ -1,10 +1,13 @@
 package familyManager;
 
 public class Child {
-    private final String pesel;
-    private final String firstName;
-    private final String secondName;
-    private final String sex;
+    private String pesel;
+    private String firstName;
+    private String secondName;
+    private String sex;
+
+    public Child() {
+    }
 
     public Child(String pesel, String firstName, String secondName, String sex) {
         this.pesel = pesel;
@@ -27,5 +30,21 @@ public class Child {
 
     public String getSex() {
         return sex;
+    }
+
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 }

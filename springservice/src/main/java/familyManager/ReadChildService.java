@@ -16,7 +16,7 @@ class ReadChildService {
     }
 
     List<Child> readChildren(long familyId) {
-        return jdbcTemplate.query("Select * FROM Child WHERE id = ?", new Object[]{familyId}, (resultSet, i) -> new Child(
+        return jdbcTemplate.query("Select * FROM Child WHERE familyId = ?", new Object[]{familyId}, (resultSet, i) -> new Child(
                 resultSet.getString("pesel"),
                 resultSet.getString("firstName"),
                 resultSet.getString("secondName"),

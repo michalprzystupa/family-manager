@@ -1,0 +1,26 @@
+<label>pesel:
+	<input (keyup)="onPeselChangeTo($event.target.value)" placeholder="pesel"/>
+</label>
+<label>firstName:
+	<input (keyup)="onFirstNameChangeTo($event.target.value)" placeholder="first name"/>
+</label>
+<label>secondName:
+	<input (keyup)="onSecondNameChangeTo($event.target.value)" placeholder="second name"/>
+</label>
+<label>sex:
+	<input (keyup)="onSexChangeTo($event.target.value)" placeholder="sex"/>
+</label>
+
+<h2>Families</h2>
+
+<table>
+	<tr>
+		<th *ngFor="let title of titles"> {{ title }} </th>
+  </tr>
+	<tr *ngFor="let family of families">
+		<td> {{ family.father.pesel }} </td>
+		<td> {{ family.father.firstName }} </td>
+		<td> {{ family.father.secondName }} </td>
+		<td> {{ family.father.birthDate }} </td>
+  </tr>
+</table>

@@ -67,10 +67,10 @@ public class FamilyControllerTest {
         Father father3 = allFathers[2];
         Father father4 = allFathers[3];
 
-        Family family1 = new Family(father1, children1);
-        Family family2 = new Family(father2, children2);
-        Family family3 = new Family(father3, children3);
-        Family family4 = new Family(father4, children4);
+        Family family1 = new Family(1, father1, children1);
+        Family family2 = new Family(2, father2, children2);
+        Family family3 = new Family(3, father3, children3);
+        Family family4 = new Family(4, father4, children4);
 
         createFullFamily(allFathers[0], children1);
         createFullFamily(allFathers[1], children2);
@@ -126,7 +126,7 @@ public class FamilyControllerTest {
     public void shouldReadFamily() throws Exception {
         Father father = allFathers[0];
         List<Child> children = Arrays.asList(allChildren[0], allChildren[1]);
-        Family family = new Family(father, children);
+        Family family = new Family(1, father, children);
 
         long familyId = createFullFamily(father, children);
 

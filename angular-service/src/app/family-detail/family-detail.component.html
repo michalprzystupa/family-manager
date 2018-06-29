@@ -1,0 +1,23 @@
+<div *ngIf="family">
+
+  <h2>Family Details</h2>
+
+  <h3>Father</h3>
+  <div><span>Pesel: </span>{{family.father.pesel}}</div>
+  <div><span>First Name: </span>{{family.father.firstName}}</div>
+  <div><span>Second Name: </span>{{family.father.secondName}}</div>
+  <div><span>Birth Date: </span>{{family.father.birthDate}}</div>
+
+  <h4>Children</h4>
+	<table>
+		<tr>
+			<th *ngFor="let title of childTitles"> {{ title }} </th>
+	  </tr>
+		<tr *ngFor="let child of family.children">
+			<td> {{ child.pesel }} </td>
+			<td> {{ child.firstName }} </td>
+			<td> {{ child.secondName }} </td>
+			<td> {{ child.sex }} </td>
+	  </tr>
+	</table>
+</div>

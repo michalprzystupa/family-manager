@@ -18,9 +18,11 @@
 		<th *ngFor="let title of titles"> {{ title }} </th>
   </tr>
 	<tr *ngFor="let family of families">
-		<td> {{ family.father.pesel }} </td>
-		<td> {{ family.father.firstName }} </td>
-		<td> {{ family.father.secondName }} </td>
-		<td> {{ family.father.birthDate }} </td>
+		<a routerLink="/detail/{{family.id}}">
+			<td> {{ family.father.pesel }} </td>
+			<td> {{ family.father.firstName }} </td>
+			<td> {{ family.father.secondName }} </td>
+			<td> {{ family.father.birthDate }} </td>
+		</a>
   </tr>
 </table>

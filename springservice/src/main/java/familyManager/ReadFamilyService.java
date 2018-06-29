@@ -23,6 +23,6 @@ class ReadFamilyService {
         Father father = readFatherService.readFather(familyId);
         List<Child> children = readChildService.readChildren(familyId);
 
-        return new Family(father, children);
+        return new Family(familyId, father, children);
     }
 }

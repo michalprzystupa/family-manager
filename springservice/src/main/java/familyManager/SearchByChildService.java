@@ -18,7 +18,7 @@ class SearchByChildService {
         this.repository = repository;
     }
 
-    List<Family> searchFamiliesByChildparameters(String firstName, String secondName, String pesel, String sex) {
+    List<Family> searchFamiliesByChildParameters(String firstName, String secondName, String pesel, String sex) {
         List<Long> familyIds = repository.searchFamilyIdsByChildParameters(firstName, secondName, pesel, sex);
         return familyIds.stream()
                 .map(readFamilyService::readFamily)

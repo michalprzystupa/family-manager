@@ -43,7 +43,7 @@ class FamilyController {
                                @RequestParam(defaultValue = "", required = false) String secondName,
                                @RequestParam(defaultValue = "", required = false) String pesel,
                                @RequestParam(defaultValue = "", required = false) String sex) {
-        return searchChildService.searchFamiliesByChildparameters(firstName, secondName, pesel, sex);
+        return searchChildService.searchFamiliesByChildParameters(firstName, secondName, pesel, sex);
     }
 
     @ResponseStatus(HttpStatus.CREATED)

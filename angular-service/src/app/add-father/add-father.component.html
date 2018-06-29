@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Create Father</h2>
+  <label>Pesel</label>
+	<input [(ngModel)]="father.pesel" placeholder="pesel"/>
+ 
+  <label>First Name</label>
+	<input [(ngModel)]="father.firstName" placeholder="first name"/>
+
+  <label>Second Name</label>
+	<input [(ngModel)]="father.secondName" placeholder="second name"/>
+
+  <label>Birth Date</label>
+	<input [(ngModel)]="father.birthDate" placeholder="birth date"/>
+ 
+  <button (click)="setFather()">Set Father</button>
+</div>

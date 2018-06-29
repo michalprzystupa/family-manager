@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Create Child</h2>
+  <label>Pesel</label>
+	<input [(ngModel)]="child.pesel" placeholder="pesel"/>
+
+  <label>First Name</label>
+	<input [(ngModel)]="child.firstName" placeholder="first name"/>
+
+  <label>Second Name</label>
+	<input [(ngModel)]="child.secondName" placeholder="second name"/>
+
+  <label>Sex</label>
+	<input [(ngModel)]="child.sex" placeholder="sex"/>
+
+  <button (click)="addChild()">Add Child</button>
+  <button (click)="createFamily()">Create Family</button>
+</div>

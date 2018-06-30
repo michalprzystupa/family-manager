@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 
+import { BackendURLs } from './BackendURLs';
 import { Father } from './Father';
 import { Child } from './Child';
 
@@ -29,11 +30,11 @@ export class FamilyCreatorService {
   }
 
   createFamily(): Observable<Number> {
-  	return this.http.post<Number>('http://localhost:8081/families', null);
+  	return this.http.post<Number>(BackendURLs.FAMILIES_URL, null);
   }
 
   createFather(familyId: number): Observable<Number> {
-		return this.http.post('http://localhost:8081/families/' + familyId + '/father', this.father)
+		return this.http.post(BackendURLs.FAMILIES_URL + familyId + '/father', this.father)
 			.pipe(flatMap(_ => of(familyId)));
   }
 
@@ -41,7 +42,7 @@ export class FamilyCreatorService {
   	let result = of(familyId);
 		this.children.forEach(
 			child => result = result
-				.pipe(flatMap(_ => this.http.post('http://localhost:8081/families/' + familyId + '/children', child)
+				.pipe(flatMap(_ => this.http.post(BackendURLs.FAMILIES_URL + familyId + '/children', child)
 				.pipe(flatMap(_ => of(familyId))))));
 		return result;
   }

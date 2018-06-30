@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
+import { BackendURLs } from './BackendURLs';
 import { Family } from './Family';
 
 @Injectable({
@@ -13,6 +14,6 @@ export class DetailsService {
   constructor(private http: HttpClient) { }
 
   getFamily(id: number): Observable<Family> {
-    return this.http.get<Family>('http://localhost:8081/families/' + id);
+    return this.http.get<Family>(BackendURLs.FAMILIES_URL + id);
   }
 }

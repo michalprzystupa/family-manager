@@ -1,17 +1,44 @@
 <div class="container">
-  <h2>Create Child</h2>
-  <label>Pesel</label>
-	<input [(ngModel)]="child.pesel" placeholder="pesel"/>
+  <h1>Add Child To Family</h1>
+  <form (ngSubmit)="addChild()" #childForm="ngForm">
 
-  <label>First Name</label>
-	<input [(ngModel)]="child.firstName" placeholder="first name"/>
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" required
+           [(ngModel)]="child.firstName" name="firstName" #firstName="ngModel">
+    <div [hidden]="firstName.valid" class="alert alert-danger">
+      First name is required
+    </div>
+  </div>
 
-  <label>Second Name</label>
-	<input [(ngModel)]="child.secondName" placeholder="second name"/>
+  <div class="form-group">
+    <label for="secondName">Second Name</label>
+    <input type="text" class="form-control" id="secondName" required
+           [(ngModel)]="child.secondName" name="secondName" #secondName="ngModel">
+    <div [hidden]="secondName.valid" class="alert alert-danger">
+      Second name is required
+    </div>
+  </div>
 
-  <label>Sex</label>
-	<input [(ngModel)]="child.sex" placeholder="sex"/>
+  <div class="form-group">
+    <label for="pesel">Pesel</label>
+    <input type="text" class="form-control" id="pesel" required 
+           [(ngModel)]="child.pesel" name="pesel" #pesel="ngModel">
+    <div [hidden]="pesel.valid" class="alert alert-danger">
+      Pesel is required
+    </div>
+  </div>
 
-  <button type="button" class="btn btn-success" (click)="addChild()">Add Child</button>
-  <button type="button" class="btn btn-success" (click)="createFamily()">Create Family</button>
+  <div class="form-group">
+    <label for="sex">Sex</label>
+    <input type="text" class="form-control" id="sex" required
+           [(ngModel)]="child.sex" name="sex" #sex="ngModel">
+    <div [hidden]="sex.valid" class="alert alert-danger">
+      Sex is required
+    </div>
+  </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!childForm.form.valid">Add</button>
+    <button type="button" class="btn btn-default" (click)="createFamily();">Create Family</button>
+  </form>
 </div>

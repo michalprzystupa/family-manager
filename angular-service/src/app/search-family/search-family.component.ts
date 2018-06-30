@@ -11,7 +11,7 @@ import { SearchService } from '../search.service';
   styleUrls: ['./search-family.component.css']
 })
 export class SearchFamilyComponent implements OnInit {
-	families: Family[] = [];
+	families: Family[];
 
 	pesel: string = '';
 	firstName: string = '';

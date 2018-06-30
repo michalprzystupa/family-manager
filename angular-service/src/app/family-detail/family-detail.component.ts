@@ -10,7 +10,6 @@ import { Family } from '../Family';
   styleUrls: ['./family-detail.component.css']
 })
 export class FamilyDetailComponent implements OnInit {
-	childTitles: string[] = ['pesel', 'first name', 'second name', 'sex'];
 	family: Family;
 
   constructor(private route: ActivatedRoute, private detailsService: DetailsService) { }

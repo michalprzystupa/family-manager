@@ -19,6 +19,7 @@ export class AddChildComponent implements OnInit {
 
   ngOnInit() {
 		this.clearChild();
+		this.familyCreator.cleanChildren();
   }
 
 	clearChild() {

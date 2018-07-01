@@ -11,7 +11,7 @@
     <modules>
         <module>database</module>
         <module>springservice</module>
-        <module>angularservice</module>
+        <module>angular-service</module>
     </modules>
 
 </project>

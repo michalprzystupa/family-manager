@@ -7,11 +7,10 @@
     <groupId>com.inteca</groupId>
     <artifactId>family-manager</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <modules>
         <module>database</module>
         <module>springservice</module>
         <module>angular-service</module>
     </modules>
-
 </project>

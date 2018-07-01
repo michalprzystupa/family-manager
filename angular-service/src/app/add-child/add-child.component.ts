@@ -12,12 +12,15 @@ import { Child } from '../Child';
 export class AddChildComponent implements OnInit {
 	child: Child;
 
+	numberOfChildren: number;
+
   constructor(
 		private familyCreator: FamilyCreatorService,
 		private router: Router
 	) { }
 
   ngOnInit() {
+  	this.numberOfChildren = 0;
 		this.clearChild();
 		this.familyCreator.cleanChildren();
   }
@@ -29,6 +32,7 @@ export class AddChildComponent implements OnInit {
 	addChild() {
 		this.familyCreator.addChild(this.child);
 		this.clearChild();
+		this.numberOfChildren += 1;
 	}
 
 	createFamily() {

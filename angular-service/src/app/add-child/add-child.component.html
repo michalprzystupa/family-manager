@@ -22,10 +22,10 @@
 
     <div class="form-group">
       <label for="pesel">Pesel</label>
-      <input type="text" class="form-control" id="pesel" required 
+      <input type="text" class="form-control" id="pesel" required pattern="^\d{11}$"
              [(ngModel)]="child.pesel" name="pesel" #pesel="ngModel">
       <div [hidden]="pesel.valid" class="alert alert-danger">
-        Pesel is required
+        Invalid pesel
       </div>
     </div>
 

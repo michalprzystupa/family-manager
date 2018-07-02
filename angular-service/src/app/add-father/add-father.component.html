@@ -22,19 +22,19 @@
 
     <div class="form-group">
       <label for="pesel">Pesel</label>
-      <input type="text" class="form-control" id="pesel" required 
+      <input type="text" class="form-control" id="pesel" required pattern="^\d{11}$"
              [(ngModel)]="father.pesel" name="pesel" #pesel="ngModel">
       <div [hidden]="pesel.valid" class="alert alert-danger">
-        Pesel is required
+        Invalid pesel
       </div>
     </div>
 
     <div class="form-group">
       <label for="birthDate">Birth Date</label>
-      <input type="text" class="form-control" id="birthDate" required
+      <input type="text" class="form-control" id="birthDate" required pattern="^\d{4}-\d{2}-\d{2}$"
              [(ngModel)]="father.birthDate" name="birthDate" #birthDate="ngModel">
       <div [hidden]="birthDate.valid" class="alert alert-danger">
-        Birth date is required
+        Invalid birth date
       </div>
     </div>
     
